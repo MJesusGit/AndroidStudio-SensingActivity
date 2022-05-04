@@ -23,8 +23,8 @@ public class ReadingSensors extends IntentService  implements SensorEventListene
     private Sensor macc;
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) { //FALTA ALGO!!!1 copiar lo que queda de las diapos
-        float lux= sensorEvent.values[0];
-        Log.i("On sensor changed","falta algo aqui\n");
+        float value_sensor= sensorEvent.values[0];
+        Log.i("On sensor changed",value_sensor+"\n");
 
     }
 
