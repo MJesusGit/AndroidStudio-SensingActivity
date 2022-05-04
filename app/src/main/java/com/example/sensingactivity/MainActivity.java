@@ -8,8 +8,11 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.preference.EditTextPreference;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private ReadingSensors mBoundService;
@@ -41,24 +44,22 @@ public class MainActivity extends AppCompatActivity {
         message= new Intent(this,ReadingSensors.class);
         mIsBound=true;
     }
-
-
     public void button_Start_click(View v){
-        Log.i("SensingActivity","Launching teh service ReadingSensors\n");
-        doBindService();
-        this.startService(message);
+
+        if(v.getId()==R.id.button_Start){
+            Log.i("SensingActivity","Launching teh service ReadingSensors\n");
+            doBindService();
+            this.startService(message);
+        }
+
+        Intent value_window = new Intent(this, show_value.class);
+        startActivity(value_window);
     }
-
-
 
     public void button_Stop_click(View v){
         doUnbindService();
         finish();
     }
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

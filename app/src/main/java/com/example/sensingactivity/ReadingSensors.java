@@ -21,8 +21,8 @@ import android.util.Log;
 public class ReadingSensors extends IntentService  implements SensorEventListener {
     private SensorManager sensorManager;
     private Sensor macc;
-    @Override
-    public void onSensorChanged(SensorEvent sensorEvent) { //FALTA ALGO!!!1 copiar lo que queda de las diapos
+   @Override
+   public void onSensorChanged(SensorEvent sensorEvent) {
         float value_sensor= sensorEvent.values[0];
         Log.i("On sensor changed",value_sensor+"\n");
 
