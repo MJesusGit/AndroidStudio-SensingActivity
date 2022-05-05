@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SensingActivity</string>
+    <string name="app_name">Accelerometer</string>
     <string name="Stop">Stop</string>
     <string name="BIENVENIDO">BIENVENIDO</string>
 </resources>
