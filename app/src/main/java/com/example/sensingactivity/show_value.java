@@ -8,7 +8,6 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -36,7 +35,7 @@ public class show_value extends Activity implements SensorEventListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_value);
 
-        Log.i("[Sensor Activity]", "Inicializating sensor services");
+        Log.i("[Sensor Activity]", "Starting sensor ");
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         acc = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorManager.registerListener(show_value.this, acc, sensorManager.SENSOR_DELAY_NORMAL);
@@ -92,7 +91,7 @@ public class show_value extends Activity implements SensorEventListener {
             startActivity(intent);
         }
     }
-    class ClientThread implements Runnable{
+    class socket implements Runnable{
         @Override
         public void run() {
             InetAddress s = null;

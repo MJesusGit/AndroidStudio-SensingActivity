@@ -2,24 +2,23 @@ package com.example.sensingactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Service;
+
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.preference.EditTextPreference;
+
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
     private ReadingSensors mBoundService;
     private boolean mIsBound;
     Intent message;
 
-    private ServiceConnection mconnection = new ServiceConnection() {
+    private  ServiceConnection mconnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             mBoundService =((ReadingSensors.LocalBinder)iBinder).getServices();
@@ -44,10 +43,11 @@ public class MainActivity extends AppCompatActivity {
         message= new Intent(this,ReadingSensors.class);
         mIsBound=true;
     }
+
     public void button_Start_click(View v){
 
         if(v.getId()==R.id.button_Start){
-            Log.i("SensingActivity","Launching teh service ReadingSensors\n");
+            Log.i("[MAIN ACTIVITY]","Launching teh service ReadingSensors\n");
             doBindService();
             this.startService(message);
         }

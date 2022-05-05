@@ -10,21 +10,13 @@ import android.hardware.SensorManager;
 import android.os.Binder;
 import android.util.Log;
 
-/**
- * An {@link IntentService} subclass for handling asynchronous task requests in
- * a service on a separate handler thread.
- * <p>
- * <p>
- * TODO: Customize class - update intent actions, extra parameters and static
- * helper methods.
- */
+
 public class ReadingSensors extends IntentService  implements SensorEventListener {
     private SensorManager sensorManager;
     private Sensor macc;
    @Override
    public void onSensorChanged(SensorEvent sensorEvent) {
-        float value_sensor= sensorEvent.values[0];
-        Log.i("On sensor changed",value_sensor+"\n");
+       
 
     }
 
@@ -47,15 +39,15 @@ public class ReadingSensors extends IntentService  implements SensorEventListene
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        Log.w("ReadingSensor Service","ReadingSensor service started!\n");
+        Log.w("[READING SENSORS]","Reading Sensor is started!\n");
         sensorManager =(SensorManager) getSystemService(Context.SENSOR_SERVICE);
          macc = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         if(macc!=null){
-            Log.w("ReadingSensor Service","hay acelerometro!\n");
+            Log.w("[READING SENSORS]","THERE IS ACCELEROMETER!!\n");
             sensorManager.registerListener(this,macc,SensorManager.SENSOR_DELAY_NORMAL);
             
         }else{
-            Log.w("ReadingSensor Service","ERROR: acc not available!\n");
+            Log.w("[READING SENSORS]","ERROR: THERE IS ACCELEROMETER!!\n");
         }
         if (intent != null) {
             final String action = intent.getAction();
