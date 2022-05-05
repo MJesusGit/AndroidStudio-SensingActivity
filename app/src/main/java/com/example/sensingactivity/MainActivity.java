@@ -11,7 +11,13 @@ import android.os.IBinder;
 
 import android.util.Log;
 import android.view.View;
-
+/**
+ * Activity for launching the aplicaction
+ *
+ * @author Maria Jesús Dueñas
+ * @version 1.2
+ *
+ */
 
 public class MainActivity extends AppCompatActivity {
     private ReadingSensors mBoundService;
