@@ -2,4 +2,6 @@
     <string name="app_name">Accelerometer</string>
     <string name="Stop">Stop</string>
     <string name="BIENVENIDO">BIENVENIDO</string>
+    <string name="WELCOME">"WELCOME "</string>
+    <string name="Pulse_to_start_the_app">Pulse to start the app</string>
 </resources>
